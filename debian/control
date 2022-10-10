@@ -1,0 +1,55 @@
+Source: libio-async-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: gregor herrmann <gregoa@debian.org>,
+           Florian Schlichting <fsfs@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               libmodule-build-perl,
+               perl
+Build-Depends-Indep: libdata-dump-perl <!nocheck>,
+                     libfuture-perl <!nocheck>,
+                     libio-socket-ip-perl <!nocheck>,
+                     libmetrics-any-perl <!nocheck>,
+                     libsereal-perl <!nocheck>,
+                     libsocket-perl <!nocheck>,
+                     libstruct-dumb-perl <!nocheck>,
+                     libtest-fatal-perl <!nocheck>,
+                     libtest-identity-perl <!nocheck>,
+                     libtest-metrics-any-perl <!nocheck>,
+                     libtest-pod-perl <!nocheck>,
+                     libtest-refcount-perl <!nocheck>,
+                     netbase <!nocheck>
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libio-async-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libio-async-perl.git
+Homepage: https://metacpan.org/release/IO-Async
+Rules-Requires-Root: no
+
+Package: libio-async-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         libfuture-perl,
+         libsocket-perl,
+         libstruct-dumb-perl,
+         libtest-metrics-any-perl
+Recommends: libasync-mergepoint-perl,
+            libio-socket-ip-perl,
+            libmetrics-any-perl,
+            libsereal-perl,
+            libtest-fatal-perl,
+            libtest-refcount-perl
+Breaks: libio-async-loop-epoll-perl (<< 0.21),
+        libio-async-loop-glib-perl (<< 0.22),
+        libio-async-loop-mojo-perl (<< 0.07)
+Description: modules for asynchronous event-driven programming
+ The IO::Async collection of modules allows programs to be written that
+ perform asynchronous filehandle IO operations.
+ .
+ A typical program using them would consist of a single subclass of
+ IO::Async::Loop to act as a container of other objects, which perform the
+ actual IO work required by the program. As well as IO handles, the loop also
+ supports timers and signal handlers, and includes more higher-level
+ functionality built on top of these basic parts.

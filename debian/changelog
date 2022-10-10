@@ -1,0 +1,479 @@
+libio-async-perl (0.800-1) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>  Fri, 27 May 2022 08:59:21 +0800
+
+libio-async-perl (0.800-1) unstable; urgency=medium
+
+  * Import upstream version 0.800.
+  * Update lists of test to run/skip during build and autopkgtest.
+    - Skip t/70future-io.t (needs not-yet-packaged libfuture-io-perl).
+    - Run t/50resolver.t (doesn't need a resolver anymore).
+  * Add test dependency on libdata-dump-perl for t/50resolver.t.
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 12 Nov 2021 17:33:09 +0100
+
+libio-async-perl (0.79-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since stretch:
+    + Build-Depends-Indep: Drop versioned constraint on libfuture-perl.
+    + libio-async-perl: Drop versioned constraint on libfuture-perl in Depends.
+
+  [ Florian Schlichting ]
+  * Import upstream version 0.79.
+  * Update copyright years
+  * Declare compliance with Debian Policy 4.6.0
+
+ -- Florian Schlichting <fsfs@debian.org>  Wed, 01 Sep 2021 22:47:37 +0800
+
+libio-async-perl (0.78-1) unstable; urgency=medium
+
+  * Import upstream version 0.78.
+  * Update years of upstream and packaging copyright.
+  * Declare compliance with Debian Policy 4.5.1.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 23 Jan 2021 21:29:02 +0100
+
+libio-async-perl (0.77-3) unstable; urgency=medium
+
+  * Add Breaks on older versions of libio-async-loop-*-perl.
+    (Closes: #963685)
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 25 Jun 2020 18:32:32 +0200
+
+libio-async-perl (0.77-2) unstable; urgency=medium
+
+  * Move libtest-metrics-any-perl from Recommends to Depends.
+    The module is required by IO::Async::LoopTests, which is used in tests of
+    other packages.
+    Thanks: ci.debian.net.
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 18 Jun 2020 18:40:41 +0200
+
+libio-async-perl (0.77-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Repository.
+  * Update standards version to 4.5.0, no changes needed.
+
+  [ gregor herrmann ]
+  * Import upstream versions 0.76, 0.77.
+  * Update years of upstream and packaging copyright.
+  * Set Rules-Requires-Root: no.
+  * New test and runtime dependencies: libtest-metrics-any-perl,
+    libmetrics-any-perl.
+  * Bump debhelper-compat to 13.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 13 Jun 2020 15:56:31 +0200
+
+libio-async-perl (0.75-1) unstable; urgency=medium
+
+  * Import upstream version 0.75.
+  * Drop correct-spellings.patch, applied upstream.
+  * Annotate test-only build dependencies with <!nocheck>.
+  * Declare compliance with Debian Policy 4.4.1.
+  * debian/watch: use uscan version 4.
+  * Drop contentless debian/upstream/metadata.
+
+ -- gregor herrmann <gregoa@debian.org>  Tue, 26 Nov 2019 19:26:58 +0100
+
+libio-async-perl (0.74-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Utkarsh Gupta ]
+  * New upstream version 0.74
+  * Bump Standards-Version to 4.4.0
+  * Bump compat to 12
+  * Add patch to fix spelling
+
+  [ gregor herrmann ]
+  * Update years of upstream and packaging copyright.
+  * Replace alternative (build) dependencies with the separate packages
+    only.
+  * Drop unnecessary version constraints from (build) dependencies.
+  * Add new module to debian/tests/pkg-perl/syntax-skip in order to pass
+    autopkgtest's syntax.t.
+
+ -- Utkarsh Gupta <guptautkarsh2102@gmail.com>  Tue, 16 Jul 2019 17:56:37 +0530
+
+libio-async-perl (0.72-1) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ gregor herrmann ]
+  * New upstream release.
+  * Update years of upstream and packaging copyright.
+  * Declare compliance with Debian Policy 4.1.4.
+  * Bump debhelper compatibility level to 10.
+  * Let cme fix some versioned dependencies, and drop ancient Breaks.
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 19 Apr 2018 21:22:31 +0200
+
+libio-async-perl (0.71-1) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+
+  [ gregor herrmann ]
+  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
+  * Remove Jonathan Yu from Uploaders. Thanks for your work!
+  * New upstream release.
+  * Update years of upstream and packaging copyright.
+  * Declare compliance with Debian Policy 3.9.8.
+  * Update short and long description from upstream docs.
+  * Add libsereal-perl to Recommends and Build-Depends-Indep.
+  * Drop spelling.patch, applied upstream.
+
+ -- gregor herrmann <gregoa@debian.org>  Tue, 27 Dec 2016 20:03:34 +0100
+
+libio-async-perl (0.70-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/rules: skip a test which needs a DNS resolver.
+  * Add a patch to fix spelling mistakes in the POD.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 21 Dec 2015 21:08:18 +0100
+
+libio-async-perl (0.69-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update years of packaging copyright.
+  * Make (build) dependency on libfuture-perl versioned.
+
+ -- gregor herrmann <gregoa@debian.org>  Tue, 10 Nov 2015 19:23:55 +0100
+
+libio-async-perl (0.68-1) unstable; urgency=medium
+
+  * Team upload.
+  * Import upstream version 0.68
+  * Bump debhelper compatibility level to 9
+  * Update year of upstream copyright
+
+ -- Lucas Kanashiro <kanashiro.duarte@gmail.com>  Tue, 22 Sep 2015 16:14:13 -0300
+
+libio-async-perl (0.67-1) unstable; urgency=medium
+
+  * Team upload.
+
+  * Add debian/upstream/metadata
+  * Import new upstream release 0.67.
+
+ -- Axel Beckert <abe@debian.org>  Sun, 07 Jun 2015 16:02:30 +0200
+
+libio-async-perl (0.64-1) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ gregor herrmann ]
+  * debian/control: update {versioned,alternative} (build) dependencies.
+  * New upstream release.
+  * Add (build) dependency on libstruct-dumb-perl.
+  * Explicitly build-depend on libmodule-build-perl.
+  * Add libtest-fatal-perl to Recommends. Used by IO::Async::LoopTests.
+  * Add libtest-fatal-perl to Recommends. Used by IO::Async::LoopTests.
+  * Add libasync-mergepoint-perl to Recommends.
+    Used by (deprecated in favour of it) IO::Async::MergePoint.
+  * Mark package as autopkgtest-able.
+  * Declare compliance with Debian Policy 3.9.6.
+
+ -- gregor herrmann <gregoa@debian.org>  Tue, 21 Oct 2014 18:08:29 +0200
+
+libio-async-perl (0.63-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 12 Jul 2014 17:58:47 +0200
+
+libio-async-perl (0.62-1) unstable; urgency=medium
+
+  * debian/control: remove Nicholas Bamber from Uploaders on request of
+    the MIA team.
+  * Strip trailing slash from metacpan URLs.
+
+  * New upstream release.
+  * Update years of upstream and packaging copyright.
+  * Update (build) dependencies.
+  * Declare compliance with Debian Policy 3.9.5.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 12 May 2014 21:14:03 +0200
+
+libio-async-perl (0.61-1) unstable; urgency=low
+
+  * Team upload
+
+  * Imported Upstream version 0.61
+    + breaks IO::Async::SSL pre 0.13, but we don't have IO::Async::SSL in
+      Debian
+
+ -- Damyan Ivanov <dmn@debian.org>  Sat, 19 Oct 2013 17:49:56 +0300
+
+libio-async-perl (0.60-1) unstable; urgency=low
+
+  [ gregor herrmann ]
+  * debian/control: update {versioned,alternative} (build) dependencies.
+
+  [ Salvatore Bonaccorso ]
+  * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
+  * Change search.cpan.org based URIs to metacpan.org based URIs
+
+  [ Florian Schlichting ]
+  * Import Upstream version 0.60 (closes: #723849)
+  * Update years of upstream copyright
+  * Exchange (build-)dependencies on Async::MergePoint and CPS with
+    Future::Utils 0.16
+  * Switch alternative dependencies on Socket | Perl >= 5.15.6 (jessie has
+    Perl 5.18.1)
+  * Recommend libio-socket-ip-perl
+  * Delete subsecond.patch, was from new upstream version
+  * Bump Standards-Version to 3.9.4 (no change)
+  * Add myself to uploaders and copyright
+
+ -- Florian Schlichting <fsfs@debian.org>  Fri, 20 Sep 2013 23:59:37 +0200
+
+libio-async-perl (0.51-4) unstable; urgency=low
+
+  * Update subscond.patch: set _CAN_SUBSECOND_ACCURATELY to 0.
+    Turn of the subsecond tests by default, individual loops can than enable
+    them. -- Change confirmed by upstream on IRC. Thanks to Paul "LeoNerd"
+    Evans for confirming this fix. (Closes: #687403)
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 24 Oct 2012 23:43:00 +0200
+
+libio-async-perl (0.51-3) unstable; urgency=low
+
+  * Add patch subsecond.patch, backported from upstream: subsecond timer
+    tests are skipped unless unit-tests require them, since they are not
+    reliable for all Loop implementations. Thanks to Paul "LeoNerd" Evans
+    (upstream author) for pointing me to the fix. (Closes: #680790)
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 15 Aug 2012 17:55:42 +0200
+
+libio-async-perl (0.51-2) unstable; urgency=low
+
+  * Team upload.
+  * Re-order alternative build-deps to something suitable
+    for current testing/sid buildds (Closes: #680832).
+
+ -- intrigeri <intrigeri@debian.org>  Sun, 08 Jul 2012 15:18:43 -0600
+
+libio-async-perl (0.51-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Nicholas Bamber ]
+  * New upstream release 0.46
+  * Removed patch applied upstream
+
+  [ Alessandro Ghedini ]
+  * New upstream release 0.47
+  * Update upstream copyright years
+  * Update debian/copyright format as in Debian Policy 3.9.3
+  * Bump Standards-Version to 3.9.3
+
+  [ gregor herrmann ]
+  * New upstream release 0.49.
+
+  [ intrigeri ]
+  * Imported Upstream version 0.50
+  * Drop obsolete dependency on libheap-perl.
+  * Add {build,runtime} dependency on perl-modules,
+    to get the new File::stat dependency.
+  * Imported Upstream version 0.51
+  * New dependency on Socket 1.95:
+    perl (>= 5.15.6) | libsocket-perl (>= 1.95).
+  * Drop obsolete build-dep on libtest-warn-perl.
+
+ -- intrigeri <intrigeri@debian.org>  Thu, 28 Jun 2012 16:58:13 +0200
+
+libio-async-perl (0.45-1) unstable; urgency=low
+
+  * Team upload.
+  * Imported Upstream version 0.45
+  * Move perl to Build-Depends for Module::Build
+  * Change dependencies on libsocket-getaddrinfo-perl.
+    As of Perl 5.13.9, core's Socket now contains getaddrinfo, getnameinfo,
+    and all the associated constants.
+    Change (Build-)Depends(-Indep) on libsocket-getaddrinfo-perl to an
+    alternate dependency perl (>= 5.14) | libsocket-getaddrinfo-perl.
+  * Add fix-spelling-error-in-manpage.patch.
+    Fix some spelling errors reported by lintian.
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 26 Nov 2011 15:02:38 +0100
+
+libio-async-perl (0.44-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update years of packaging copyright.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 15 Oct 2011 22:40:57 +0200
+
+libio-async-perl (0.43-1) unstable; urgency=low
+
+  [ Harlan Lieberman-Berg ]
+  * Team upload.
+  * New upstream version.
+
+  [ Ansgar Burchardt ]
+  * debian/control: Convert Vcs-* fields to Git.
+
+  [ Salvatore Bonaccorso ]
+  * debian/copyright: Fix URL to revision 135 of Format-Specification in DEP5
+    for machine-readable coyright file
+
+ -- Harlan Lieberman-Berg <H.LiebermanBerg@gmail.com>  Fri, 05 Aug 2011 15:00:24 -0400
+
+libio-async-perl (0.42-1) unstable; urgency=low
+
+  * Team upload
+  * New upstream release
+
+ -- Maximilian Gass <mxey@cloudconnected.org>  Sun, 03 Jul 2011 16:30:03 +0200
+
+libio-async-perl (0.41-1) unstable; urgency=low
+
+  * Team upload
+  * New upstream release
+  * Bump Standards-Version to 3.9.2: no changes necessary
+
+ -- Maximilian Gass <mxey@cloudconnected.org>  Tue, 21 Jun 2011 19:37:50 +0200
+
+libio-async-perl (0.40-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Mon, 14 Mar 2011 20:50:17 -0400
+
+libio-async-perl (0.39-1) unstable; urgency=low
+
+  [ Nicholas Bamber ]
+  * Upped compatibility level to 8
+  * Added build dependency on libtest-identity-perl
+  * Email change: Jonathan Yu -> jawnsy@cpan.org
+  * Refreshed copyright
+  * Removed patch no longer required: fix-pod-spelling.patch
+  * Reviewed dependencies, in particular libasync-mergepoint-perl requires 0.3
+  * Made sure example scripts have correct permissions
+
+  [ Jonathan Yu ]
+  * New upstream release 0.39
+    + Breaks older loop implementations (written pre-0.33)
+  * Added build dependency on libcps-perl
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Thu, 17 Feb 2011 13:47:06 +0000
+
+libio-async-perl (0.30-1) unstable; urgency=low
+
+  [ Jonathan Yu ]
+  * New upstream release
+  * Standards-Version 3.9.1 (no changes)
+  * Use "Debian systems" in d/copyright
+
+  [ Nicholas Bamber ]
+  * Added myself to Uploaders
+  * Added versioned dependency on libsocket-getaddrinfo-perl
+  * Refreshed copyright
+  * Reviewed patch
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Mon, 25 Oct 2010 09:15:16 +0100
+
+libio-async-perl (0.29-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add /me to Uploaders.
+  * Add build dependency on libtest-warn-perl.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 21 Jun 2010 22:41:56 +0200
+
+libio-async-perl (0.28-1) unstable; urgency=low
+
+  * New upstream release
+  * Standards-Version 3.8.4 (no changes)
+  * Update copyright information
+  * Add a patch to fix POD spelling problems
+  * Use 3.0 (quilt) source format
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Thu, 11 Mar 2010 14:48:57 -0500
+
+libio-async-perl (0.27-1) unstable; urgency=low
+
+  [ Jonathan Yu ]
+  * New upstream release
+
+  [ gregor herrmann ]
+  * debian/copyright: update years of upstream copyright.
+  * debian/control: remove build dependency on libmodule-build-perl.
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Thu, 24 Dec 2009 07:06:35 -0500
+
+libio-async-perl (0.26-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Mon, 23 Nov 2009 19:08:32 -0500
+
+libio-async-perl (0.25-1) unstable; urgency=low
+
+  [ Jonathan Yu ]
+  * New upstream release
+
+  [ gregor herrmann ]
+  * debian/control: Changed: (build-)depend on perl instead of perl-
+    modules.
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Wed, 04 Nov 2009 20:06:03 -0500
+
+libio-async-perl (0.24-1) unstable; urgency=low
+
+  [ Jonathan Yu ]
+  * New upstream release
+    + Breaks older loop implementations (written pre-0.24)
+  * Add a NEWS file announcing the new API
+
+  [ Ryan Niebur ]
+  * Update jawnsy's email address
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Tue, 13 Oct 2009 08:59:16 -0400
+
+libio-async-perl (0.23-1) unstable; urgency=low
+
+  [ Jonathan Yu ]
+  * New upstream release
+    + IO::Async::Listener is now a constructable Notifier subclass
+    + Allow Signal, Timer and Listener to act as base classes as well as
+      standalone with callbacks
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Changed: Replace versioned (build-)dependency on
+    perl (>= 5.6.0-{12,16}) with an unversioned dependency on perl (as
+    permitted by Debian Policy 3.8.3).
+
+  [ gregor herrmann ]
+  * Minimize debian/rules.
+  * Set Standards-Version to 3.8.3 (no further changes).
+
+ -- Jonathan Yu <frequency@cpan.org>  Thu, 20 Aug 2009 09:35:37 -0400
+
+libio-async-perl (0.22-1) unstable; urgency=low
+
+  * New upstream release
+    + Added new tcp-proxy.pl example
+    + Don't test Async::MergePoint locally anymore
+    + Code refactoring, added better checking to ->configure
+  * Standards-Version 3.8.2 (no changes)
+  * Added netbase and libtest-pod-perl to B-D-I for tests
+
+  [ Nathan Handler ]
+  * debian/watch: Update to ignore development releases.
+
+ -- Jonathan Yu <frequency@cpan.org>  Mon, 20 Jul 2009 07:34:42 -0400
+
+libio-async-perl (0.21-1) unstable; urgency=low
+
+  * Initial Release. (Closes: #527180)
+
+ -- Jonathan Yu <frequency@cpan.org>  Tue, 26 May 2009 15:53:16 -0400

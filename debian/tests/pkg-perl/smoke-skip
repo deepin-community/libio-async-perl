@@ -1,0 +1,2 @@
+# needs Test::Future::IO::Impl / libfuture-io-perl
+t/70future-io.t
